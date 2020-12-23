@@ -156,6 +156,8 @@ class FIGR:
         while self.eps <= 1000000:
             self.reset_meta_model()
             self.meta_training_loop()
+            if (self.eps + 1) % 100 == 0:
+                print(f'Step {self.eps + 1}.')
 
             # Validation run every 10000 training loop
             if self.eps % 10000 == 0:
